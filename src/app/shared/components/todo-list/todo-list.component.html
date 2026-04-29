@@ -1,0 +1,12 @@
+<div class="todo-wrapper">
+  <ul class="todo-list">
+    @for (item of toDoList(); track item.id) {
+      <app-todo-item
+        [todo]="item"
+        (delete)="delete.emit($event)"
+        (checked)="checked.emit($event)"
+        (edit)="edit.emit($event)"
+      ></app-todo-item>
+    }
+  </ul>
+</div>

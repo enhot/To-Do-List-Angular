@@ -1,0 +1,28 @@
+<li class="todo-item" [ngClass]="{ completed: todo().completed }">
+  <input
+    class="todo-checkbox"
+    type="checkbox"
+    [checked]="todo().completed"
+    (change)="checked.emit(todo().id)"
+  />
+
+  @if (!isEditing()) {
+    <span class="todo-title">{{ todo().title }}</span>
+    <span>{{ todo().priority }}</span>
+    <div class="todo-actions">
+      <button class="btn-edit" (click)="startEditTitle()">✏️</button>
+      <button class="btn-delete" (click)="delete.emit(todo().id)">🗑</button>
+    </div>
+  } @else {
+    <input
+      class="edit-input"
+      type="text"
+      [value]="editValue()"
+      (input)="onInput($event)"
+    />
+    <button class="btn btn-save" (click)="saveEditTitle()">Save</button>
+    <button class="btn btn-close" (click)="isEditing.set(false)">
+      &#10008;
+    </button>
+  }
+</li>

@@ -1,0 +1,51 @@
+<main>
+  <header class="app-header">
+    <h1>Tasks</h1>
+  </header>
+
+  <div class="add-form">
+    <input
+      [value]="newTitle()"
+      (input)="onInput($event)"
+      placeholder="New task..."
+    />
+    <button (click)="addNewTask()">
+      <span class="btn-icon">+</span>
+      <span>Add</span>
+    </button>
+  </div>
+
+  <div class="toolbar">
+    <div class="filters">
+      <button [class.active]="filter() === 'all'" (click)="filter.set('all')">
+        All
+      </button>
+      <button
+        [class.active]="filter() === 'active'"
+        (click)="filter.set('active')"
+      >
+        Active
+      </button>
+      <button
+        [class.active]="filter() === 'completed'"
+        (click)="filter.set('completed')"
+      >
+        Comleted
+      </button>
+    </div>
+
+    <select (change)="onFilterPriority($event)">
+      <option value="all">All</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+
+  <app-todo-list
+    [toDoList]="filteredList()"
+    (delete)="deleteTask($event)"
+    (checked)="toggleCompleted($event)"
+    (edit)="editTask($event)"
+  ></app-todo-list>
+</main>
