@@ -1,4 +1,4 @@
-import { Component, effect, input, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { IToDo } from '../../models/todo.interface';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 

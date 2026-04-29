@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { mergeMap, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IToDo } from '../models/todo.interface';
 
 @Injectable({
