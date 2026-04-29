@@ -6,17 +6,17 @@ Simple app for add tasks.
 
 - Angular 17+
 - Signals
-- RxJs
+- RxJS
 - JSONPlaceholder API
 
-## Functional
+## Features
 
 - add/ remove / edit tasks
-- marking completed tasks
-- filter for status
-- filter for priority
+- mark tasks as completed
+- filter by status (all / active / completed)
+- filter by priority (low / medium / high)
 
-## Запуск
+## Getting Started
 
 npm install
 ng serve

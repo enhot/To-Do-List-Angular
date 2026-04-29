@@ -85,7 +85,7 @@ export class TodoPageComponent implements OnInit {
       .deleteTask<IToDo>(id)
       .pipe(
         catchError((error) => {
-          console.error('Таска не знайдена', error);
+          console.error('Task not found', error);
           return EMPTY;
         }),
       )
